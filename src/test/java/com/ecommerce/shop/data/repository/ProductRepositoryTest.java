@@ -65,6 +65,5 @@ class ProductRepositoryTest {
         assertThat(productRepositoryImpl.findById(110L).orElse(null)).isNotNull();
         productRepositoryImpl.deleteById(110L);
         assertThat(productRepositoryImpl.findById(110L).orElse(null)).isNull();
-
         }
 }
