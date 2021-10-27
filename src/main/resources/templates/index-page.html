@@ -146,14 +146,14 @@
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" th:each ="product: ${products}">
 				<div class="col-md-4 text-center animate-box">
-					<div class="product" th:each="product : ${products}">
+					<div class="product" >
 						<div class="product-grid" th:style="'background-image:url('+${product.getImageUrl()[0]}+');'">
 							<div class="inner">
 								<p>
 									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									<a th:href="@{single/{id}(id =${product.getId()})}" class="icon"><i class="icon-eye"></i></a>
 								</p>
 							</div>
 						</div>
@@ -206,7 +206,7 @@
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<figure>
-										<img src="images/person3.jpg" alt="user">
+										<img src="../public/images/person3.jpg" alt="user">
 									</figure>
 									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
 									<blockquote>
